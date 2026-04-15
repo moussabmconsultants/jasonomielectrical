@@ -315,7 +315,7 @@ body {
     margin-bottom: 30px;
     padding-bottom: 15px;
     border-bottom: 2px solid #3498db;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     text-align: center;
     font-weight: 600;
 }
@@ -337,7 +337,7 @@ body {
     text-decoration: none;
     border-radius: 8px;
     transition: all 0.3s ease;
-    font-size: 1.0rem;
+    font-size: 0.85rem;
     border-left: 4px solid transparent;
     background: black (255, 255, 255, 0.05);
 }
@@ -359,7 +359,7 @@ body {
 
 .sidebar-link i {
     width: 25px;
-    font-size: 1.2rem;
+    font-size: 0.85rem;
     text-align: center;
 }
 
@@ -823,7 +823,7 @@ body {
     }
     
     .document-type {
-        margin-bottom: 1px;
+        margin-bottom: 5px;
     }
 }
 
@@ -839,7 +839,7 @@ body {
 }
 
 .main-footer p {
-    font-size: 0.95rem;
+    font-size: 0.50rem;
 }
 
 /* Popup Styles */
@@ -892,7 +892,7 @@ body {
     background: none;
     border: none;
     color: white;
-    font-size: 0.5rem;
+    font-size: 1rem;
     cursor: pointer;
     line-height: 1;
 }
@@ -972,7 +972,7 @@ body {
 }
 
 .success-message i {
-    font-size: 3rem;
+    font-size: 2.2rem;
     color: #c8c8c8;
     margin-bottom: 20px;
 }
@@ -984,21 +984,6 @@ body {
 
 .success-message p {
     color: #7f8c8d;
-}
-
-/* Popup Logo Styles with Image */
-.popup-top-logo {
-    background: linear-gradient(135deg, #2d2d2d, #2d2d2d);
-    padding: 10px 15px;
-    text-align: center;
-    border-bottom: 3px solid #c8c8c8;
-}
-
-.company-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
 }
 
 /* Popup Logo Styles - Without Border, Shadow, Reduced Size */
@@ -1251,7 +1236,7 @@ body {
 
 /* Submit Button Styles for Formspree */
 .submit-btn {
-    background: linear-gradient(to right, #1976d2, #1565c0);
+    background: linear-gradient(to right, #0078d7, #0078d7);
     color: white;
     border: none;
     padding: 16px 30px;
@@ -1307,7 +1292,7 @@ body {
 }
 
 .success-message i {
-    font-size: 5rem;
+    font-size: 2rem;
     color: #e0e0e0;
     margin-bottom: 25px;
     animation: pulse 2s infinite;
@@ -1322,12 +1307,12 @@ body {
 .success-message h3 {
     color: #e0e0e0;
     margin-bottom: 15px;
-    font-size: 1.8rem;
+    font-size: 0.7rem;
 }
 
 .success-message p {
     color: #546e7a;
-    font-size: 1.1rem;
+    font-size: 0.7rem;
 }
 
 /* Mobile Responsive for Popup */
@@ -1408,7 +1393,7 @@ body {
 @media (prefers-color-scheme: dark) {
     .popup-container {
         background: #1e1e1e;
-        border-color: #0078d7;
+        border-color: #141414;
     }
     
     .form-message {
@@ -1530,7 +1515,7 @@ body {
 
 .back-btn:hover {
     background: #2d2d2d;
-    color: #f8f9fa;
+    color: #dee2e6;
     border-color: #424242;
 }
 
@@ -1751,11 +1736,11 @@ body {
 .email-input-container input {
     width: 100%;
     padding: 14px 18px;
-    border: 2px solid #424242;
+    border: 2px solid #e0e0e0;
     border-radius: 8px;
     font-size: 1rem;
     transition: all 0.3s ease;
-    background: white;
+    background: #2d2d2d;
 }
 
 .email-input-container input:focus {
@@ -1829,6 +1814,163 @@ body {
     .email-input-hint i {
         color: #4fc3f7;
     }
+}
+
+/* Mail Provider Dropdown - Updated */
+.mail-provider-dropdown {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.dropdown-selected {
+    padding: 14px 18px;
+    background: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.dropdown-selected:hover {
+    border-color: #1976d2;
+    background: white;
+}
+
+.dropdown-selected i:first-child {
+    color: #1976d2;
+    font-size: 1rem;
+    width: 20px;
+}
+
+.dropdown-selected span {
+    flex: 1;
+    color: #495057;
+    font-weight: 400;
+}
+
+.dropdown-arrow {
+    color: #6c757d;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-selected.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Options */
+.dropdown-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    margin-top: 5px;
+}
+
+.dropdown-options.show {
+    display: block;
+    animation: fadeInDown 0.3s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-option {
+    padding: 11px 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.dropdown-option:last-child {
+    border-bottom: none;
+}
+
+.dropdown-option:hover {
+    background: #f8f9fa;
+}
+
+.dropdown-option i {
+    width: 20px;
+    font-size: 1rem;
+    color: #495057;
+}
+
+.dropdown-option[data-value="gmail"] i {
+    color: #db4437;
+}
+
+.dropdown-option[data-value="yahoo"] i {
+    color: #6001d2;
+}
+
+.dropdown-option[data-value="outlook"] i {
+    color: #0078d4;
+}
+
+.dropdown-option[data-value="icloud"] i {
+    color: #000000;
+}
+
+.dropdown-option[data-value="aol"] i {
+    color: #ff1b1b;
+}
+
+.dropdown-option[data-value="custom"] i {
+    color: #6c757d;
+}
+
+.dropdown-option span:first-of-type {
+    flex: 1;
+    color: #2c3e50;
+    font-weight: 400;
+}
+
+.option-hint {
+    color: #6c757d;
+    font-size: 0.7rem;
+    font-style: italic;
+}
+
+/* Active state for dropdown */
+.dropdown-selected.active {
+    border-color: #1976d2;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+}
+
+/* Selected provider style */
+.dropdown-selected.has-selection {
+    border-color: #424242;
+    background: rgba(39, 174, 96, 0.05);
+}
+
+.dropdown-selected.has-selection i:first-child {
+    color: #e0e0e0;
 }
 
 /* Dark mode support */
@@ -2109,7 +2251,7 @@ body {
 }
 
 .document-meta {
-    font-size: 0.5rem;
+    font-size: 0.3rem;
     color: #e9ecef;
     line-height: 1.4;
 }
